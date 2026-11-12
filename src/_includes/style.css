@@ -179,3 +179,4 @@ footer li{margin:.35rem 0;font-size:.95rem}
 .manifesto .btn{background:#F7F5EF;color:var(--dark);border-color:#F7F5EF}
 .dark .btn.ghost,.manifesto .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.8)}
 .dark .btn.ghost:hover{background:#fff;color:var(--dark)}
+.manifesto .rule{margin-inline:auto}
