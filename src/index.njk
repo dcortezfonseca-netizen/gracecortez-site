@@ -1,67 +1,115 @@
 ---
 layout: base.njk
 isHome: true
-title: Aluguel de vestidos de noiva, festa e debutantes em Divinópolis
-description: Ateliê da estilista Grace Cortez em Divinópolis, MG. Aluguel de vestidos de noiva, festa, debutantes, damas, madrinhas e ternos. Agende sua visita pelo WhatsApp.
-waMessage: Olá! Vim pelo site da Grace Cortez Atelier e quero agendar um horário para provar vestidos.
+title: Noivas sob medida e locação de vestidos em Divinópolis
+description: Ateliê da estilista Grace Cortez em Divinópolis, MG. Vestidos de noiva sob medida e locação de vestidos de noiva, festa, debutantes e madrinhas. Agende pelo WhatsApp.
+waMessage: Olá! Vim pelo site da Grace Cortez Atelier e gostaria de agendar um horário no ateliê.
+ctaTitle: Graciosas, vamos vestir o seu sonho?
 ---
 <section class="hero">
   <div class="wrap">
     <div>
       <span class="eyebrow">Ateliê em Divinópolis · MG</span>
-      <h1>Vestidos para os dias <em>que você vai lembrar</em></h1>
-      <p class="lead">Aluguel de vestidos de noiva, festa, debutantes, damas e madrinhas, e ternos, no ateliê da estilista Grace Cortez.</p>
+      <h1>Vestindo sonhos <em>com propósito</em></h1>
+      <p class="lead">Vestidos de noiva sob medida e locação de vestidos para noivas, debutantes, madrinhas e festas, no ateliê da estilista Grace Cortez.</p>
       <div class="actions">
         <a class="btn" href="{{ waMessage | wa(site) }}" rel="noopener">Agendar pelo WhatsApp</a>
-        <a class="btn ghost" href="#colecoes">Ver as coleções</a>
+        <a class="btn ghost" href="#a-grace">Conheça a Grace</a>
       </div>
       <ul class="proof">
         <li>Atendimento com horário marcado</li>
         <li>Esplanada, Divinópolis</li>
-        <li>Segunda a sexta, 9h às 19h</li>
+        <li>Noivas de toda a região</li>
       </ul>
     </div>
     <figure>{% foto "hero-grace.jpg", "Grace Cortez, estilista do ateliê, ao lado de um manequim com vestido de noiva", "4/5", "(min-width: 860px) 45vw, 100vw", true %}</figure>
   </div>
 </section>
 
-<section class="alt" id="colecoes">
+<section class="manifesto" aria-label="Manifesto">
   <div class="wrap">
-    <span class="eyebrow">Coleções</span>
-    <h2>Para cada ocasião, um vestido</h2>
-    <p class="lead" style="margin-bottom:2rem">Escolha a categoria e veja as peças. Para provar, é só agendar.</p>
-    <div class="cards">
-      <a class="card" href="/vestidos-de-noiva/">{% foto "card-noiva.jpg", "Noiva com vestido de renda no ateliê", "4/5", "(min-width: 900px) 22vw, 90vw" %}<div class="txt"><h3>Noivas</h3><p>Sereia, princesa, corte A e mais.</p><span class="more">Ver vestidos</span></div></a>
-      <a class="card" href="/vestidos-de-festa/">{% foto "card-festa.jpg", "Vestido longo de festa vermelho", "4/5", "(min-width: 900px) 22vw, 90vw" %}<div class="txt"><h3>Festa</h3><p>Formaturas, casamentos e eventos.</p><span class="more">Ver vestidos</span></div></a>
-      <a class="card" href="/debutantes/">{% foto "card-debutante.jpg", "Debutante com vestido de baile", "4/5", "(min-width: 900px) 22vw, 90vw" %}<div class="txt"><h3>Debutantes</h3><p>O baile dos 15 anos.</p><span class="more">Ver vestidos</span></div></a>
-      <a class="card" href="/damas-e-madrinhas/">{% foto "card-madrinha.jpg", "Madrinhas com vestidos rosa", "4/5", "(min-width: 900px) 22vw, 90vw" %}<div class="txt"><h3>Damas e madrinhas</h3><p>Para quem acompanha a noiva.</p><span class="more">Ver vestidos</span></div></a>
-      <a class="card" href="/ternos/">{% foto "card-terno.jpg", "Terno cinza para noivo", "4/5", "(min-width: 900px) 22vw, 90vw" %}<div class="txt"><h3>Ternos</h3><p>Noivos, padrinhos e convidados.</p><span class="more">Ver ternos</span></div></a>
+    <span class="eyebrow">Manifesto</span>
+    <blockquote>A beleza é o reflexo da graça que habita em nós.</blockquote>
+    <hr class="rule">
+    <p>Não fazemos apenas vestidos. Tecemos histórias.</p>
+    <p>Cada risco, cada traço, cada ponto, cada linha que nasce em nossas mãos carrega o silêncio de um sonho prestes a florescer.</p>
+    <p>Aqui, o luxo é sentir. A beleza é crer. E o resultado é eterno.</p>
+    <p class="sign">Grace Cortez</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="center" style="margin-bottom:2.4rem">
+      <span class="eyebrow">Duas formas de vestir o seu momento</span>
+      <h2>Do desenho ao acervo</h2>
+    </div>
+    <div class="doors">
+      <article class="door">
+        {% foto "sob-medida-01.jpg", "Detalhe de renda em vestido de noiva sob medida no ateliê", "4/3", "(min-width: 860px) 48vw, 100vw" %}
+        <div class="body">
+          <span class="eyebrow">Sob medida</span>
+          <h3>Um vestido desenhado para a sua história</h3>
+          <p>Criado pela Grace a partir de quem você é, do seu estilo e do seu dia. Vestidos com alma, para a noiva que quer mais do que um vestido bonito.</p>
+          <a class="more" href="/sob-medida/">Conheça o sob medida</a>
+        </div>
+      </article>
+      <article class="door">
+        {% foto "acervo-01.jpg", "Vestidos do acervo do ateliê expostos no showroom", "4/3", "(min-width: 860px) 48vw, 100vw" %}
+        <div class="body">
+          <span class="eyebrow">Locação</span>
+          <h3>O acervo do ateliê, para provar com calma</h3>
+          <p>Vestidos de noiva, festa, debutantes, damas e madrinhas, e ternos, com curadoria atemporal e ajustes para cada corpo.</p>
+          <a class="more" href="/como-alugar/">Como funciona a locação</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="a-grace">
+  <div class="wrap split">
+    <figure>{% foto "grace-costura.jpg", "Grace Cortez costurando um vestido branco no ateliê", "5/4", "(min-width: 860px) 45vw, 100vw" %}</figure>
+    <div>
+      <span class="eyebrow">A estilista</span>
+      <h2>Criar com fé, vestir histórias</h2>
+      <p>Grace Cortez conheceu o universo das noivas atendendo no balcão e se apaixonou. Estudou, formou-se em Moda e transformou esse chamado em ateliê.</p>
+      <ul class="timeline">
+        <li><b>2001</b>Começa a atender noivas e damas e se encanta pelo universo das noivas.</li>
+        <li><b>2012</b>Forma-se em Moda, com um TCC sobre a história do vestido de noiva.</li>
+        <li><b>2013</b>Abre o Grace Cortez Atelier, com o apoio do marido, em um quarto do apartamento do casal.</li>
+        <li><b>Hoje</b>Um novo capítulo, mais autoral, com vestidos sob medida e o acervo para locação.</li>
+      </ul>
+      <div class="actions"><a class="btn ghost" href="/a-grace/">Conheça a história</a></div>
     </div>
   </div>
 </section>
 
 <section>
-  <div class="wrap split">
-    <figure>{% foto "grace-costura.jpg", "Grace Cortez costurando um vestido branco no ateliê", "5/4", "(min-width: 860px) 45vw, 100vw" %}</figure>
-    <div>
-      <span class="eyebrow">A estilista</span>
-      <h2>Quem está por trás do ateliê</h2>
-      <p>A Grace Cortez Atelier é liderada pela estilista Grace Cortez, que acompanha o dia a dia do ateliê e o trabalho com cada peça.</p>
-      <p>A trajetória da Grace na moda da região inclui premiações. Conheça o trabalho e a história por trás de cada vestido.</p>
-      <div class="actions"><a class="btn ghost" href="/a-grace/">Conheça a Grace</a><a class="btn ghost" href="/premios/">Ver prêmios</a></div>
+  <div class="wrap">
+    <div class="center" style="margin-bottom:2.2rem">
+      <span class="eyebrow">Momentos</span>
+      <h2>Para cada celebração, um jeito de brilhar</h2>
+    </div>
+    <div class="moments">
+      <a class="moment" href="/vestidos-de-noiva/">{% foto "card-noiva.jpg", "Noiva com vestido de renda no ateliê", "3/4", "(min-width: 900px) 20vw, 90vw" %}<span class="cap"><b>Noivas</b><span>O dia que você sempre imaginou</span></span></a>
+      <a class="moment" href="/vestidos-de-festa/">{% foto "card-festa.jpg", "Vestido longo de festa vermelho", "3/4", "(min-width: 900px) 20vw, 90vw" %}<span class="cap"><b>Festa</b><span>Formaturas, casamentos e eventos</span></span></a>
+      <a class="moment" href="/debutantes/">{% foto "card-debutante.jpg", "Debutante com vestido de baile", "3/4", "(min-width: 900px) 20vw, 90vw" %}<span class="cap"><b>Debutantes</b><span>O baile dos 15 anos</span></span></a>
+      <a class="moment" href="/damas-e-madrinhas/">{% foto "card-madrinha.jpg", "Madrinhas com vestidos rosa", "3/4", "(min-width: 900px) 20vw, 90vw" %}<span class="cap"><b>Madrinhas</b><span>Para quem acompanha a noiva</span></span></a>
+      <a class="moment" href="/ternos/">{% foto "card-terno.jpg", "Terno cinza para noivo", "3/4", "(min-width: 900px) 20vw, 90vw" %}<span class="cap"><b>Noivos</b><span>Noivo, padrinhos e convidados</span></span></a>
     </div>
   </div>
 </section>
 
 <section class="alt">
   <div class="wrap">
-    <span class="eyebrow">Como funciona</span>
+    <span class="eyebrow">Atendimento</span>
     <h2>Do primeiro contato à prova</h2>
     <ol class="steps" style="margin-top:2rem">
-      <li><h3>Chame no WhatsApp</h3><p>Conte a data e o tipo de evento. Respondemos e combinamos o melhor horário.</p></li>
-      <li><h3>Agende sua prova</h3><p>O atendimento é com horário marcado, para você ser atendida com atenção.</p></li>
-      <li><h3>Venha ao ateliê</h3><p>Prove os vestidos pessoalmente na Esplanada, em Divinópolis.</p></li>
-      <li><h3>Escolha o seu</h3><p>Tire suas dúvidas e combine os detalhes do aluguel diretamente com a equipe.</p></li>
+      <li><h3>Chame no WhatsApp</h3><p>Conte a data do seu evento e o que você sonha. Respondemos e combinamos o melhor horário.</p></li>
+      <li><h3>Agende sua visita</h3><p>O atendimento é com horário marcado, para você ser recebida com calma e atenção.</p></li>
+      <li><h3>Venha ao ateliê</h3><p>Converse com a equipe e conheça pessoalmente o trabalho, na Esplanada, em Divinópolis.</p></li>
+      <li><h3>Escolha com segurança</h3><p>Tire suas dúvidas e combine os detalhes diretamente com o ateliê.</p></li>
     </ol>
     <div class="actions"><a class="btn" href="{{ waMessage | wa(site) }}" rel="noopener">Quero agendar</a><a class="btn ghost" href="/como-alugar/">Perguntas frequentes</a></div>
   </div>
@@ -86,8 +134,8 @@ waMessage: Olá! Vim pelo site da Grace Cortez Atelier e quero agendar um horár
 <section class="alt">
   <div class="wrap">
     <span class="eyebrow">Onde atendemos</span>
-    <h2>Divinópolis e região</h2>
-    <p class="lead" style="margin-bottom:1.4rem">Noivas, debutantes e convidadas de Divinópolis e das cidades vizinhas vêm provar no ateliê.</p>
+    <h2>Noivas de Divinópolis e de toda a região</h2>
+    <p class="lead" style="margin-bottom:1.4rem">Noivas, debutantes e convidadas de Divinópolis e das cidades vizinhas vêm ao ateliê.</p>
     <ul class="cities">{% for c in site.cities %}<li>{{ c }}</li>{% endfor %}</ul>
   </div>
 </section>

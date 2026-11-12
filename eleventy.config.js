@@ -16,21 +16,14 @@ export default function (eleventyConfig) {
 
   // Fontes hospedadas no próprio site (mais rápido e sem enviar IP do visitante ao Google)
   const fontFiles = [
+    ["cormorant-garamond", "cormorant-garamond-latin-300-normal.woff2"],
+    ["cormorant-garamond", "cormorant-garamond-latin-400-normal.woff2"],
     ["cormorant-garamond", "cormorant-garamond-latin-500-normal.woff2"],
-    ["cormorant-garamond", "cormorant-garamond-latin-600-normal.woff2"],
+    ["cormorant-garamond", "cormorant-garamond-latin-400-italic.woff2"],
     ["cormorant-garamond", "cormorant-garamond-latin-500-italic.woff2"],
-    ["jost", "jost-latin-300-normal.woff2"],
-    ["jost", "jost-latin-400-normal.woff2"],
-    ["jost", "jost-latin-500-normal.woff2"],
-    ["bodoni-moda", "bodoni-moda-latin-400-normal.woff2"],
-    ["bodoni-moda", "bodoni-moda-latin-500-normal.woff2"],
-    ["bodoni-moda", "bodoni-moda-latin-400-italic.woff2"],
-    ["italiana", "italiana-latin-400-normal.woff2"],
-    ["instrument-serif", "instrument-serif-latin-400-normal.woff2"],
-    ["instrument-serif", "instrument-serif-latin-400-italic.woff2"],
-    ["tenor-sans", "tenor-sans-latin-400-normal.woff2"],
-    ["figtree", "figtree-latin-400-normal.woff2"],
-    ["figtree", "figtree-latin-500-normal.woff2"],
+    ["lato", "lato-latin-300-normal.woff2"],
+    ["lato", "lato-latin-400-normal.woff2"],
+    ["lato", "lato-latin-700-normal.woff2"],
   ];
   for (const [pkg, file] of fontFiles) {
     eleventyConfig.addPassthroughCopy({

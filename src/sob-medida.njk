@@ -1,0 +1,73 @@
+---
+layout: base.njk
+title: Vestido de noiva sob medida em Divinópolis
+description: Vestido de noiva sob medida criado pela estilista Grace Cortez em Divinópolis, MG, para noivas da região. Conheça o ateliê e agende uma conversa pelo WhatsApp.
+breadcrumb: Sob medida
+waMessage: Olá! Vim pelo site da Grace Cortez Atelier e gostaria de conversar sobre um vestido de noiva sob medida.
+faq:
+  - q: Com quanto tempo de antecedência devo procurar o ateliê para um vestido sob medida?
+    a: O prazo depende do modelo e do seu calendário. O ideal é conversar o quanto antes e informar a data do casamento, para que o ateliê diga o que é possível.
+  - q: Como funciona o primeiro atendimento?
+    a: O atendimento é com horário marcado. Você conta a sua história, o estilo que imagina e a data do evento, e o ateliê orienta os próximos passos.
+  - q: Atendem noivas de outras cidades da região?
+    a: Sim. Noivas de Divinópolis e de cidades vizinhas vêm ao ateliê, na Esplanada. Chame no WhatsApp para combinar o melhor horário.
+  - q: Também é possível alugar um vestido, em vez de fazer sob medida?
+    a: Sim. O ateliê também tem um acervo para locação de vestidos de noiva, festa, debutantes, damas e madrinhas, e ternos.
+---
+<section class="hero" style="padding-bottom:2.5rem">
+  <div class="wrap">
+    <div>
+      <p class="crumbs"><a href="/">Início</a> / Sob medida</p>
+      <span class="eyebrow">Sob medida</span>
+      <h1>Vestido de noiva sob medida, <em>criado com alma</em></h1>
+      <p class="lead">Para a noiva que não quer só um vestido bonito, mas uma peça que traduza a sua história, o seu estilo e o seu dia. Criado pela estilista Grace Cortez, em Divinópolis.</p>
+      <div class="actions"><a class="btn" href="{{ waMessage | wa(site) }}" rel="noopener">Conversar sobre o meu vestido</a></div>
+    </div>
+    <figure>{% foto "sob-medida-hero.jpg", "Vestido de noiva sob medida em criação no ateliê", "4/5", "(min-width: 860px) 45vw, 100vw", true %}</figure>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap narrow prose center">
+    <span class="eyebrow">A ideia</span>
+    <p class="promise">Vestidos com alma, alinhados à história de cada mulher.</p>
+    <hr class="rule">
+    <p>Na Grace Cortez, um vestido é mais que tecido e costura. É a materialização de um sonho. Por isso o processo começa por ouvir você: o que você imagina, como se sente e o que quer viver nesse dia.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">O caminho</span>
+    <h2>Do primeiro risco ao grande dia</h2>
+    <ol class="steps" style="margin-top:2rem">
+      <li><h3>Escuta</h3><p>Você conta a sua história, o estilo que imagina e a data do evento.</p></li>
+      <li><h3>Criação</h3><p>A Grace desenha uma peça pensada para o seu corpo e para o seu momento.</p></li>
+      <li><h3>Provas</h3><p>Cada prova é feita com atenção aos detalhes, para o vestido servir como se fosse seu desde sempre.</p></li>
+      <li><h3>O grande dia</h3><p>Você veste uma peça única, com a tranquilidade de quem foi acompanhada em cada etapa.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <span class="eyebrow">Bastidores</span>
+    <h2>Cada ponto, cada linha</h2>
+    <div class="gallery" style="margin-top:1.6rem">
+      <figure>{% foto "processo-01.jpg", "Grace Cortez costurando um vestido branco", "4/5" %}</figure>
+      <figure>{% foto "processo-02.jpg", "Grace Cortez ajustando um manequim no ateliê", "4/5" %}</figure>
+      <figure>{% foto "processo-03.jpg", "Detalhe de bordado em tecido branco", "4/5" %}</figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow faq">
+    <span class="eyebrow">Perguntas frequentes</span>
+    <h2>Sobre o vestido sob medida</h2>
+    {% for q in faq %}<details><summary>{{ q.q }}</summary><p>{{ q.a }}</p></details>{% endfor %}
+  </div>
+</section>
+<script type="application/ld+json">{% set fq = [] %}{% for q in faq %}{% set fq = (fq.push({ "@type": "Question", "name": q.q, "acceptedAnswer": { "@type": "Answer", "text": q.a } }), fq) %}{% endfor %}{{ { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": fq } | json | safe }}</script>
+
+{% include "cta.njk" %}

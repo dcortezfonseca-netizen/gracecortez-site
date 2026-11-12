@@ -5,7 +5,7 @@ export default {
   url: process.env.SITE_URL || "https://www.gracecortez.com.br",
   lang: "pt-BR",
   year: new Date().getFullYear(),
-  tagline: "Aluguel de vestidos de noiva, festa, debutantes, damas e ternos em Divinópolis",
+  tagline: "Vestidos de noiva sob medida e locação de vestidos de noiva, festa e debutantes em Divinópolis, MG",
   founder: "Grace Cortez",
   phone: "(37) 3212-6470",
   phoneIntl: "+553732126470",
