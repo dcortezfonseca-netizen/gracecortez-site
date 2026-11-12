@@ -12,8 +12,13 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.8",
     "@11ty/eleventy-img": "^6.0.0",
+    "@fontsource/bodoni-moda": "^5.3.0",
     "@fontsource/cormorant-garamond": "^5.2.0",
+    "@fontsource/figtree": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
+    "@fontsource/italiana": "^5.3.0",
     "@fontsource/jost": "^5.2.0",
+    "@fontsource/tenor-sans": "^5.3.0",
     "html-minifier-terser": "^7.2.0"
   },
   "engines": {

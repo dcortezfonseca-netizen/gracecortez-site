@@ -22,6 +22,15 @@ export default function (eleventyConfig) {
     ["jost", "jost-latin-300-normal.woff2"],
     ["jost", "jost-latin-400-normal.woff2"],
     ["jost", "jost-latin-500-normal.woff2"],
+    ["bodoni-moda", "bodoni-moda-latin-400-normal.woff2"],
+    ["bodoni-moda", "bodoni-moda-latin-500-normal.woff2"],
+    ["bodoni-moda", "bodoni-moda-latin-400-italic.woff2"],
+    ["italiana", "italiana-latin-400-normal.woff2"],
+    ["instrument-serif", "instrument-serif-latin-400-normal.woff2"],
+    ["instrument-serif", "instrument-serif-latin-400-italic.woff2"],
+    ["tenor-sans", "tenor-sans-latin-400-normal.woff2"],
+    ["figtree", "figtree-latin-400-normal.woff2"],
+    ["figtree", "figtree-latin-500-normal.woff2"],
   ];
   for (const [pkg, file] of fontFiles) {
     eleventyConfig.addPassthroughCopy({
