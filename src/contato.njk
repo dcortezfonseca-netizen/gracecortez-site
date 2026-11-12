@@ -1,0 +1,35 @@
+---
+layout: base.njk
+title: Contato e endereço
+description: Endereço, telefone, WhatsApp e horário da Grace Cortez Atelier, na Esplanada, em Divinópolis, MG. Agende sua visita.
+breadcrumb: Contato
+---
+<section class="hero" style="padding-bottom:2rem">
+  <div class="wrap narrow" style="display:block">
+    <p class="crumbs"><a href="/">Início</a> / Contato</p>
+    <span class="eyebrow">Contato</span>
+    <h1>Fale com o ateliê</h1>
+    <p class="lead">O jeito mais rápido é o WhatsApp. Diga a data do seu evento e combinamos o horário.</p>
+    <div class="actions"><a class="btn" href="{{ site.defaultMessage | wa(site) }}" rel="noopener">Chamar no WhatsApp</a><a class="btn ghost" href="tel:{{ site.phoneIntl }}">Ligar {{ site.phone }}</a></div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap split">
+    <div>
+      <h2>Endereço</h2>
+      <address style="font-style:normal;margin-bottom:1.4rem">{{ site.address.street }}<br>{{ site.address.district }}, {{ site.address.city }} – {{ site.address.state }}<br>CEP {{ site.address.zip }}</address>
+      <h3>Horário</h3>
+      <p>{{ site.hours.label }}.<br>{{ site.hours.note }}</p>
+      <h3>Telefones</h3>
+      <p>Fixo: <a href="tel:{{ site.phoneIntl }}">{{ site.phone }}</a><br>WhatsApp: <a href="{{ site.defaultMessage | wa(site) }}" rel="noopener">{{ site.whatsapp }}</a></p>
+      <h3>Redes sociais</h3>
+      <p><a href="{{ site.instagram }}" rel="noopener me">Instagram</a> · <a href="{{ site.facebook }}" rel="noopener me">Facebook</a></p>
+      <div class="actions"><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query={{ (site.address.street + ', ' + site.address.district + ', ' + site.address.city + ' ' + site.address.state) | urlencode }}" rel="noopener">Abrir no Google Maps</a></div>
+    </div>
+    <div>
+      <h2>Atendemos Divinópolis e região</h2>
+      <ul class="cities">{% for c in site.cities %}<li>{{ c }}</li>{% endfor %}</ul>
+    </div>
+  </div>
+</section>

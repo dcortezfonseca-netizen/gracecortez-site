@@ -1,0 +1,45 @@
+---
+layout: base.njk
+title: Como alugar vestido ou terno em Divinópolis
+description: Veja como funciona o atendimento na Grace Cortez Atelier, em Divinópolis, e tire dúvidas sobre agendamento, endereço, horário e disponibilidade.
+breadcrumb: Como alugar
+---
+{% set faq = [
+  { q: "Preciso agendar para visitar o ateliê?", a: "O atendimento é com horário marcado. Chame no WhatsApp (37) 98814-6470 e combinamos o melhor dia e horário, de segunda a sexta, das 9h às 19h." },
+  { q: "Onde fica o ateliê?", a: "Na Av. Cel. Júlio Ribeiro Gontijo, 326, bairro Esplanada, em Divinópolis, MG, CEP 35501-000." },
+  { q: "Quais peças vocês alugam?", a: "Vestidos de noiva, vestidos de festa, vestidos de debutante, vestidos de damas e madrinhas e ternos." },
+  { q: "Os valores aparecem no site?", a: "Não. Os valores dependem da peça e da data do evento. Envie uma mensagem pelo WhatsApp com a data para receber as informações." },
+  { q: "Como sei se o vestido está disponível na minha data?", a: "A disponibilidade varia conforme a data. Informe o dia do evento ao falar com a equipe pelo WhatsApp." },
+  { q: "Atendem clientes de outras cidades?", a: "Sim. Recebemos clientes de Divinópolis e região, que vêm ao ateliê para provar." },
+  { q: "Funciona aos sábados e domingos?", a: "Não. O ateliê funciona de segunda a sexta, das 9h às 19h. Sábado e domingo fechado." }
+] %}
+<section class="hero" style="padding-bottom:2rem">
+  <div class="wrap narrow" style="display:block">
+    <p class="crumbs"><a href="/">Início</a> / Como alugar</p>
+    <span class="eyebrow">Atendimento</span>
+    <h1>Como alugar na Grace Cortez Atelier</h1>
+    <p class="lead">Do primeiro contato à prova, o atendimento é simples e com horário marcado.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <ol class="steps">
+      <li><h3>Chame no WhatsApp</h3><p>Conte a data e o tipo de evento: casamento, formatura, baile de debutante.</p></li>
+      <li><h3>Agende sua prova</h3><p>Combinamos o dia e o horário, de segunda a sexta.</p></li>
+      <li><h3>Venha ao ateliê</h3><p>Prove os vestidos ou ternos pessoalmente, na Esplanada.</p></li>
+      <li><h3>Combine os detalhes</h3><p>Tire suas dúvidas e confirme o aluguel com a equipe.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow faq">
+    <span class="eyebrow">Perguntas frequentes</span>
+    <h2>Dúvidas comuns</h2>
+    {% for q in faq %}<details><summary>{{ q.q }}</summary><p>{{ q.a }}</p></details>{% endfor %}
+  </div>
+</section>
+<script type="application/ld+json">{% set fq = [] %}{% for q in faq %}{% set fq = (fq.push({ "@type": "Question", "name": q.q, "acceptedAnswer": { "@type": "Answer", "text": q.a } }), fq) %}{% endfor %}{{ { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": fq } | json | safe }}</script>
+
+{% include "cta.njk" %}

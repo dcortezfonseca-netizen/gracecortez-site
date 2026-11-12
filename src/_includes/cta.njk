@@ -1,0 +1,12 @@
+<section class="dark" id="agendar">
+  <div class="wrap narrow">
+    <span class="eyebrow">Agende sua visita</span>
+    <h2>{{ ctaTitle or "Venha conhecer os vestidos pessoalmente" }}</h2>
+    <p class="lead">{{ ctaText or "O atendimento é com horário marcado, para que você prove com calma e tenha a atenção que merece. Chame no WhatsApp, diga a data do seu evento e combinamos o melhor horário." }}</p>
+    <div class="actions">
+      <a class="btn" href="{{ (waMessage or site.defaultMessage) | wa(site) }}" rel="noopener">Chamar no WhatsApp</a>
+      <a class="btn ghost" style="color:#fff;border-color:#fff" href="tel:{{ site.phoneIntl }}">Ligar {{ site.phone }}</a>
+    </div>
+    <p style="margin-top:1.4rem;font-size:.92rem">{{ site.address.street }}, {{ site.address.district }} — {{ site.address.city }}/{{ site.address.state }}<br>{{ site.hours.label }}. {{ site.hours.note }}</p>
+  </div>
+</section>

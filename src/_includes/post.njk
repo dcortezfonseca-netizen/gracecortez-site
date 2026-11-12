@@ -1,0 +1,34 @@
+---
+layout: base.njk
+---
+{%- set postSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "datePublished": date | iso,
+  "dateModified": (modified or date) | iso,
+  "inLanguage": "pt-BR",
+  "mainEntityOfPage": page.url | abs(site),
+  "author": { "@type": "Person", "name": "Grace Cortez Atelier" },
+  "publisher": { "@id": site.url + "/#negocio" }
+} %}
+<article>
+  <section class="hero" style="padding-bottom:1.5rem">
+    <div class="wrap narrow" style="display:block">
+      <p class="crumbs"><a href="/">Início</a> / <a href="/blog/">Blog</a></p>
+      <span class="eyebrow">{{ category }}</span>
+      <h1 style="font-size:clamp(2.1rem,5vw,3.4rem)">{{ title }}</h1>
+      <p class="meta">{{ date | dataPt }}</p>
+    </div>
+  </section>
+  <section class="alt" style="padding-top:2.5rem">
+    <div class="wrap narrow prose">
+      {{ content | safe }}
+      <div class="callout">
+        <p style="margin:0"><strong>Quer provar pessoalmente?</strong> O ateliê fica na Esplanada, em Divinópolis, e o atendimento é com horário marcado. <a href="{{ (waMessage or site.defaultMessage) | wa(site) }}" rel="noopener">Agende pelo WhatsApp</a>.</p>
+      </div>
+    </div>
+  </section>
+</article>
+<script type="application/ld+json">{{ postSchema | json | safe }}</script>

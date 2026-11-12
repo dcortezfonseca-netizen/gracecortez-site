@@ -1,0 +1,24 @@
+---
+layout: base.njk
+title: Blog — dicas para noivas, madrinhas, debutantes e noivos
+description: Dicas práticas sobre vestido de noiva, vestido de madrinha, vestido de debutante e terno de noivo, pelo ateliê Grace Cortez, de Divinópolis, MG.
+breadcrumb: Blog
+---
+<section class="hero" style="padding-bottom:2rem">
+  <div class="wrap narrow" style="display:block">
+    <p class="crumbs"><a href="/">Início</a> / Blog</p>
+    <span class="eyebrow">Blog</span>
+    <h1>Dicas para escolher com segurança</h1>
+    <p class="lead">Orientações práticas para noivas, madrinhas, debutantes e noivos.</p>
+  </div>
+</section>
+<section class="alt">
+  <div class="wrap narrow">
+    <ul class="post-list">
+      {% for post in collections.posts %}
+      <li><a href="{{ post.url }}"><span class="meta">{{ post.date | dataPt }}</span><h2>{{ post.data.title }}</h2><p>{{ post.data.description }}</p></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% include "cta.njk" %}

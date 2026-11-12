@@ -1,0 +1,5 @@
+# Buscadores e assistentes de IA são bem-vindos.
+User-agent: *
+Allow: /
+
+Sitemap: https://www.gracecortez.com.br/sitemap.xml

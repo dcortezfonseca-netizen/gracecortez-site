@@ -1,0 +1,63 @@
+---
+layout: base.njk
+---
+<section class="hero" style="padding-bottom:2.5rem">
+  <div class="wrap narrow" style="display:block">
+    <p class="crumbs"><a href="/">Início</a> / {{ breadcrumb }}</p>
+    <span class="eyebrow">{{ eyebrow }}</span>
+    <h1>{{ h1 }}</h1>
+    <p class="lead">{{ intro }}</p>
+    <div class="actions">
+      <a class="btn" href="{{ waMessage | wa(site) }}" rel="noopener">{{ ctaLabel or "Agendar pelo WhatsApp" }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    {%- if chips %}
+    <ul class="chips" aria-label="Ir para um estilo">{% for c in chips %}<li><a href="#{{ c.id }}">{{ c.t }}</a></li>{% endfor %}</ul>
+    {%- endif %}
+    {%- if groups %}
+      {% for g in groups %}
+      <div id="{{ g.id }}" style="scroll-margin-top:90px;margin-bottom:3rem">
+        <h2>{{ g.t }}</h2>
+        {%- if g.text %}<p class="lead" style="margin-bottom:1.4rem">{{ g.text }}</p>{%- endif %}
+        <div class="gallery">
+          {% for f in g.fotos %}<figure>{% foto f.file, f.alt, f.ratio or "4/5" %}{% if f.cap %}<figcaption>{{ f.cap }}</figcaption>{% endif %}</figure>{% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    {%- else %}
+      <div class="gallery">
+        {% for f in fotos %}<figure>{% foto f.file, f.alt, f.ratio or "4/5" %}{% if f.cap %}<figcaption>{{ f.cap }}</figcaption>{% endif %}</figure>{% endfor %}
+      </div>
+    {%- endif %}
+    <p style="margin-top:2rem;color:var(--muted);font-size:.95rem">As fotos são ilustrativas das peças do ateliê. A disponibilidade varia conforme a data do seu evento: consulte pelo WhatsApp.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">{{ guiaEyebrow or "Para escolher melhor" }}</span>
+      <h2>{{ guiaTitle }}</h2>
+      {{ guiaHtml | safe }}
+      {%- if post %}<p><a href="{{ post.url }}">Leia também: {{ post.title }} →</a></p>{%- endif %}
+    </div>
+    <figure>{% foto guiaFoto.file, guiaFoto.alt, "4/5" %}</figure>
+  </div>
+</section>
+
+{%- if faq %}
+<section class="alt">
+  <div class="wrap narrow faq">
+    <span class="eyebrow">Perguntas frequentes</span>
+    <h2>{{ faqTitle or "Dúvidas comuns" }}</h2>
+    {% for q in faq %}<details><summary>{{ q.q }}</summary><p>{{ q.a }}</p></details>{% endfor %}
+  </div>
+</section>
+<script type="application/ld+json">{% set fq = [] %}{% for q in faq %}{% set fq = (fq.push({ "@type": "Question", "name": q.q, "acceptedAnswer": { "@type": "Answer", "text": q.a } }), fq) %}{% endfor %}{{ { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": fq } | json | safe }}</script>
+{%- endif %}
+
+{% include "cta.njk" %}

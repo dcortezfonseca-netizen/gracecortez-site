@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+{%- set fullTitle = (title + " | " + site.name) if title else "" %}
+{%- set pageTitle = (site.name + " | Aluguel de vestidos em Divinópolis, MG") if isHome else (fullTitle if fullTitle.length <= 65 else title) %}
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ description or site.tagline }}">
+<link rel="canonical" href="{{ page.url | abs(site) }}">
+<meta name="robots" content="{{ robots or 'index,follow,max-image-preview:large' }}">
+<meta name="theme-color" content="#faf7f2">
+<meta property="og:type" content="{{ 'article' if layout == 'post.njk' else 'website' }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ description or site.tagline }}">
+<meta property="og:url" content="{{ page.url | abs(site) }}">
+<meta property="og:image" content="{{ '/og.jpg' | abs(site) }}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/atom+xml" title="{{ site.name }} — Blog" href="/blog/feed.xml">
+<link rel="preload" href="/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/jost-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>{% set css %}{% include "style.css" %}{% endset %}{{ css | cssmin | safe }}</style>
+
+{# ===== Dados estruturados: negócio local (em todas as páginas) ===== #}
+<script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org",
+  "@type": "ClothingStore",
+  "@id": (site.url + "/#negocio"),
+  "name": site.name,
+  "description": site.tagline,
+  "url": site.url,
+  "telephone": site.phoneIntl,
+  "image": (site.url + "/og.jpg"),
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": site.address.street + ", " + site.address.district,
+    "addressLocality": site.address.city,
+    "addressRegion": site.address.state,
+    "postalCode": site.address.zip,
+    "addressCountry": "BR"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:00",
+    "closes": "19:00"
+  }],
+  "founder": { "@type": "Person", "name": site.founder, "jobTitle": "Estilista" },
+  "areaServed": site.cities,
+  "sameAs": [site.instagram, site.facebook],
+  "knowsAbout": ["Aluguel de vestido de noiva","Aluguel de vestido de festa","Vestido de debutante","Vestido de madrinha","Aluguel de terno"]
+} | json | safe }}
+</script>
+{%- if breadcrumb %}
+<script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Início", "item": site.url + "/" },
+    { "@type": "ListItem", "position": 2, "name": breadcrumb, "item": page.url | abs(site) }
+  ]
+} | json | safe }}
+</script>
+{%- endif %}
+{%- if schemaExtra %}<script type="application/ld+json">{{ schemaExtra | safe }}</script>{%- endif %}
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="{{ site.name }} — página inicial"><b>{{ site.shortName }}</b><small>Atelier</small></a>
+    {%- set links = [
+      { "u": "/vestidos-de-noiva/", "t": "Noivas" },
+      { "u": "/vestidos-de-festa/", "t": "Festa" },
+      { "u": "/debutantes/", "t": "Debutantes" },
+      { "u": "/damas-e-madrinhas/", "t": "Madrinhas" },
+      { "u": "/ternos/", "t": "Ternos" },
+      { "u": "/a-grace/", "t": "A Grace" },
+      { "u": "/blog/", "t": "Blog" }
+    ] %}
+    <nav class="nav desk" aria-label="Principal">
+      <ul>{% for l in links %}<li><a href="{{ l.u }}"{% if page.url == l.u or (l.u != '/' and page.url.startsWith(l.u)) %} aria-current="page"{% endif %}>{{ l.t }}</a></li>{% endfor %}</ul>
+    </nav>
+    <a class="btn sm" href="{{ site.defaultMessage | wa(site) }}" rel="noopener">Agendar horário</a>
+    <details class="menu">
+      <summary>Menu</summary>
+      <nav class="nav" aria-label="Principal (celular)">
+        <ul>{% for l in links %}<li><a href="{{ l.u }}">{{ l.t }}</a></li>{% endfor %}<li><a href="/como-alugar/">Como alugar</a></li><li><a href="/contato/">Contato</a></li></ul>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<main id="conteudo">
+{{ content | safe }}
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h2>{{ site.name }}</h2>
+        <p>{{ site.tagline }}. Ateliê liderado pela estilista {{ site.founder }}.</p>
+        <p><a href="{{ site.instagram }}" rel="noopener me">Instagram</a> · <a href="{{ site.facebook }}" rel="noopener me">Facebook</a></p>
+      </div>
+      <div>
+        <h2>Visite o ateliê</h2>
+        <address>{{ site.address.street }}<br>{{ site.address.district }}, {{ site.address.city }} – {{ site.address.state }}<br>CEP {{ site.address.zip }}</address>
+        <p>{{ site.hours.label }}<br>{{ site.hours.note }}</p>
+        <p>Fixo: <a href="tel:{{ site.phoneIntl }}">{{ site.phone }}</a><br>WhatsApp: <a href="{{ site.defaultMessage | wa(site) }}" rel="noopener">{{ site.whatsapp }}</a></p>
+      </div>
+      <div>
+        <h2>Navegue</h2>
+        <ul>
+          <li><a href="/vestidos-de-noiva/">Vestidos de noiva</a></li>
+          <li><a href="/vestidos-de-festa/">Vestidos de festa</a></li>
+          <li><a href="/debutantes/">Debutantes</a></li>
+          <li><a href="/damas-e-madrinhas/">Damas e madrinhas</a></li>
+          <li><a href="/ternos/">Ternos</a></li>
+          <li><a href="/premios/">Prêmios</a></li>
+          <li><a href="/como-alugar/">Como alugar</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contato/">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">© {{ site.year }} {{ site.name }}. Divinópolis, Minas Gerais.</p>
+  </div>
+</footer>
+
+<div class="fab"><a class="btn" href="{{ (waMessage or site.defaultMessage) | wa(site) }}" rel="noopener">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm5.8 14.1c-.25.7-1.4 1.34-1.93 1.4-.5.07-1.1.1-1.77-.12-.4-.13-.93-.3-1.6-.6-2.8-1.2-4.62-4.03-4.76-4.22-.14-.18-1.14-1.52-1.14-2.9s.72-2.06.98-2.34c.25-.28.55-.35.74-.35h.53c.17 0 .4-.06.62.48.25.57.84 1.98.9 2.12.08.14.12.3.03.48-.1.19-.14.3-.29.46-.14.17-.3.37-.43.5-.15.14-.3.3-.13.58.17.28.77 1.27 1.65 2.05 1.14 1 2.1 1.32 2.4 1.46.3.14.47.12.64-.07.18-.2.74-.86.93-1.16.2-.28.4-.23.66-.14.27.1 1.7.8 2 .95.28.14.47.2.54.33.07.1.07.7-.18 1.4Z"/></svg>
+  Agendar pelo WhatsApp</a></div>
+</body>
+</html>

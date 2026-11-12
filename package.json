@@ -1,0 +1,22 @@
+{
+  "name": "grace-cortez-atelier-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Site institucional da Grace Cortez Atelier (Divinópolis/MG)",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site .cache"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8",
+    "@11ty/eleventy-img": "^6.0.0",
+    "@fontsource/cormorant-garamond": "^5.2.0",
+    "@fontsource/jost": "^5.2.0",
+    "html-minifier-terser": "^7.2.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
