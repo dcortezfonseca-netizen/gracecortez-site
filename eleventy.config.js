@@ -2,10 +2,15 @@ import fs from "node:fs";
 import path from "node:path";
 import Image from "@11ty/eleventy-img";
 import { minify } from "html-minifier-terser";
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+
+// Prefixo de caminho: vazio no domínio próprio; "/gracecortez-site" na prévia do github.io
+const PREFIX = (process.env.PATH_PREFIX || "").replace(/\/$/, "");
 
 const SRC_IMG = "src/img";
 
 export default function (eleventyConfig) {
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   // ---------- Arquivos copiados como estão ----------
   eleventyConfig.addPassthroughCopy({ "src/static": "/" });
 
@@ -36,7 +41,7 @@ export default function (eleventyConfig) {
   );
   eleventyConfig.addFilter("abs", (p, site) => new URL(p, site.url).toString());
   eleventyConfig.addFilter("cssmin", (css) =>
-    css.replace(/\/\*[\s\S]*?\*\//g, "").replace(/\s+/g, " ").replace(/\s*([{};:,>])\s*/g, "$1").replace(/;}/g, "}")
+    css.replace(/url\(\/fonts\//g, `url(${PREFIX}/fonts/`).replace(/\/\*[\s\S]*?\*\//g, "").replace(/\s+/g, " ").replace(/\s*([{};:,>])\s*/g, "$1").replace(/;}/g, "}")
   );
 
   // ---------- Coleção do blog ----------
@@ -84,6 +89,7 @@ export default function (eleventyConfig) {
   });
 
   return {
+    pathPrefix: PREFIX ? PREFIX + "/" : "/",
     dir: { input: "src", output: "_site", includes: "_includes", data: "_data" },
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",

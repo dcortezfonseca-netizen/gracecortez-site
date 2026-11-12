@@ -21,6 +21,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+        env:
+          PATH_PREFIX: /gracecortez-site
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
